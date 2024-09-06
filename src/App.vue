@@ -10,7 +10,7 @@ const folderName = "moynaq"; // Change this to the folder you want to access
 const fetchImages = async () => {
   const { data, error } = await supabase.storage
     .from("photography")
-    .list(folderName, { limit: 100 });
+    .list(folderName);
   if (error) {
     console.error("Error fetching files:", error.message);
   } else {
