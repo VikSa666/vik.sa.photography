@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref, onMounted } from "vue";
 import { supabase } from "./supabase/supabaseClient"; // Adjust path if necessary
+import NavBar from "./components/NavBar.vue";
 
 // Variables
 const images = ref<string[]>([]);
@@ -37,22 +38,19 @@ onMounted(() => {
 </script>
 
 <template>
-  <div>
-    <h1>Image Gallery</h1>
-    <div v-if="images.length === 0">No images found in the folder.</div>
-    <div v-else>
-      <div v-for="(image, index) in images" :key="index">
-        <h3>Image {{ index + 1 }}</h3>
-        <img
-          :src="image"
-          alt="Image"
-          style="max-width: 300px; margin-bottom: 10px"
-        />
-      </div>
-    </div>
+  <div id="app">
+    <nav-bar />
+    <router-view />
   </div>
 </template>
 
 <style scoped>
-/* Add styles here if needed */
+#app {
+  max-width: none;
+  margin-top: 60px; /* Adjust according to navbar height */
+}
+
+router-view {
+  width: 100%;
+}
 </style>
