@@ -3,6 +3,7 @@
     <ul class="navbar-menu">
       <li><router-link to="/home">Home</router-link></li>
       <li><router-link to="/about">About</router-link></li>
+      <li><router-link to="/series-index">Series Index</router-link></li>
       <li class="dropdown">
         <span>Series</span>
         <ul class="dropdown-menu">
