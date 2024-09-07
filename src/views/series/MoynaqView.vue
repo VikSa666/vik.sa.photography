@@ -11,9 +11,6 @@ import ImageGallery from "../../components/ImageGallery.vue";
 
 <style scoped>
 .series {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  width: 100vw;
 }
 </style>

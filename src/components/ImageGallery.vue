@@ -43,11 +43,7 @@ onMounted(() => {
   <div v-if="images.length === 0">No images found in the folder.</div>
   <div v-else class="gallery">
     <div class="gallery-item" v-for="(image, index) in images" :key="index">
-      <img
-        :src="image"
-        alt="Image"
-        style="max-width: 300px; margin-bottom: 10px"
-      />
+      <img :src="image" alt="Image" />
     </div>
   </div>
 </template>
@@ -66,7 +62,6 @@ onMounted(() => {
 
 .gallery-item img {
   width: 100%;
-  height: auto; /* Maintain the aspect ratio */
   display: block;
 }
 </style>

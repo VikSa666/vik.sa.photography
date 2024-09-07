@@ -16,7 +16,6 @@ const fetchImages = async () => {
     console.error("Error fetching files:", error.message);
   } else {
     if (data && data.length > 0) {
-      console.log(data);
       images.value = data.map((file: any) => {
         console.log(file);
         const publicUrl = supabase.storage
@@ -38,19 +37,14 @@ onMounted(() => {
 </script>
 
 <template>
-  <div id="app">
+  <div>
     <nav-bar />
-    <router-view />
+    <router-view class="main-view" />
   </div>
 </template>
 
 <style scoped>
-#app {
-  max-width: none;
-  margin-top: 60px; /* Adjust according to navbar height */
-}
-
-router-view {
-  width: 100%;
+.main-view {
+  margin-top: 20vh; /* Adjust based on your navbar height */
 }
 </style>
