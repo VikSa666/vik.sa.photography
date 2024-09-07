@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc -b && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "deploy": "vite build && git add dist && git commit -m 'Deploy' && git subtree push --prefix dist origin gh-pages"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.45.3",
