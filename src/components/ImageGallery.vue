@@ -13,7 +13,8 @@ const images = ref<string[]>([]);
 onMounted(() => {
   console.log(props.folderName);
   fetchImages(props.folderName).then((data) => {
-    images.value = data;
+    if (data) images.value = data;
+    else console.log("No images found in the folder ", props.folderName);
   });
 });
 </script>
@@ -35,16 +36,16 @@ onMounted(() => {
 }
 
 .gallery-item {
-  margin-bottom: 16px; /* Space between items vertically */
   break-inside: avoid; /* Prevent images from being split across columns */
 }
 
 .gallery-item img {
   width: 100%;
   display: block;
+  margin-bottom: 16px;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 700px) {
   .gallery {
     column-count: 1; /* Wrap into one column */
   }

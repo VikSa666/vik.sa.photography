@@ -9,8 +9,4 @@
 import ImageGallery from "../../components/ImageGallery.vue";
 </script>
 
-<style scoped>
-.series {
-  width: 100vw;
-}
-</style>
+<style scoped></style>

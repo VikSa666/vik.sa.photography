@@ -34,24 +34,60 @@ import { onMounted, ref } from "vue";
 
 const seriesList: SeriesDescription[] = [
   {
-    name: "The Aral Sea",
-    description: "An expedition to the disappearing Aral Sea in Uzbekistan.",
-    folder: "moynaq",
-    image: "moynaq/main-horizontal.jpeg",
+    name: "Georgia",
+    description: "My first travel with a camera.",
+    folder: "georgia",
+    image: "georgia/main-horizontal.jpeg",
   },
   {
-    name: "The Fence",
-    description: "A photo series about the fence in Melilla, Spain.",
-    folder: "melilla",
-    image: "melilla/main-horizontal.jpeg",
+    name: "Moldova and Transnistria",
+    description: "A photo series of the least visited country in Europe.",
+    folder: "moldavia",
+    image: "moldavia/main-horizontal.jpeg",
   },
   {
-    name: "Brutalism Architecture",
-    description: "A collection of brutalist architecture photos.",
-    folder: "brutalism",
-    image: "brutalism/main-horizontal.jpeg",
+    name: "New York City",
+    description: "A collection of photos from the Big Apple.",
+    folder: "ny",
+    image: "ny/main-horizontal.jpeg",
   },
-  // Add more series here if needed
+  {
+    name: "Nador, Melilla and Oujda",
+    description: "Discover the unknown cities of Morocco.",
+    folder: "nador",
+    image: "nador/main-horizontal.jpeg",
+  },
+  {
+    name: "Uzbekistan",
+    description: "Discover the remains of the Silk Road.",
+    folder: "uzbekistan",
+    image: "uzbekistan/main-horizontal.jpeg",
+  },
+  {
+    name: "Central Europe",
+    description:
+      "A journey through the cities of Berlin, Dresden, Prague, Krakow and Warsaw.",
+    folder: "interrail",
+    image: "interrail/main-horizontal.jpeg",
+  },
+  {
+    name: "Temples of Siem Reap",
+    description: "A photo series of the temples of Angkor.",
+    folder: "siemreap",
+    image: "siemreap/main-horizontal.jpeg",
+  },
+  {
+    name: "Vietnam",
+    description: "A trip through the country of the ascending dragon.",
+    folder: "vietnam",
+    image: "vietnam/main-horizontal.jpeg",
+  },
+  {
+    name: "Bangkok",
+    description: "A photo series of the capital of Thailand.",
+    folder: "bangkok",
+    image: "bangkok/main-horizontal.jpeg",
+  },
 ];
 
 const imageToShowURL = ref<string[]>([]);
