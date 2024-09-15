@@ -39,12 +39,12 @@ onMounted(() => {
 <template>
   <div>
     <nav-bar />
-    <router-view class="main-view" />
+    <div class="main-view"><router-view /></div>
   </div>
 </template>
 
 <style scoped>
 .main-view {
-  margin-top: 20vh; /* Adjust based on your navbar height */
+  margin-top: 50px;
 }
 </style>

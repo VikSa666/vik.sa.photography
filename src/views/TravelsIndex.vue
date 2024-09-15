@@ -16,7 +16,7 @@
             <div class="text-container">
               <h2 class="series-title">{{ series.name }}</h2>
               <p class="series-description">{{ series.description }}</p>
-              <router-link class="see-more" :to="`series/${series.folder}`"
+              <router-link class="see-more" :to="`travels/${series.folder}`"
                 >See more →</router-link
               >
             </div>
@@ -34,24 +34,60 @@ import { onMounted, ref } from "vue";
 
 const seriesList: SeriesDescription[] = [
   {
-    name: "The Aral Sea",
-    description: "An expedition to the disappearing Aral Sea in Uzbekistan.",
-    folder: "moynaq",
-    image: "series/moynaq/main-horizontal.jpeg",
+    name: "Georgia",
+    description: "My first travel with a camera.",
+    folder: "georgia",
+    image: "travel/georgia/main-horizontal.jpeg",
   },
   {
-    name: "The Fence",
-    description: "A photo series about the fence in Melilla, Spain.",
-    folder: "melilla",
-    image: "series/melilla/main-horizontal.jpeg",
+    name: "Moldova and Transnistria",
+    description: "A photo series of the least visited country in Europe.",
+    folder: "moldavia",
+    image: "travel/moldova/main-horizontal.jpeg",
   },
   {
-    name: "Brutalism Architecture",
-    description: "A collection of brutalist architecture photos.",
-    folder: "brutalism",
-    image: "series/brutalism/main-horizontal.jpeg",
+    name: "New York City",
+    description: "A collection of photos from the Big Apple.",
+    folder: "ny",
+    image: "travel/ny/main-horizontal.jpeg",
   },
-  // Add more series here if needed
+  {
+    name: "Nador, Melilla and Oujda",
+    description: "Discover the unknown cities of Morocco.",
+    folder: "nador",
+    image: "travel/nador/main-horizontal.jpeg",
+  },
+  {
+    name: "Uzbekistan",
+    description: "Discover the remains of the Silk Road.",
+    folder: "uzbekistan",
+    image: "travel/uzbekistan/main-horizontal.jpeg",
+  },
+  {
+    name: "Central Europe",
+    description:
+      "A journey through the cities of Berlin, Dresden, Prague, Krakow and Warsaw.",
+    folder: "interrail",
+    image: "travel/interrail/main-horizontal.jpeg",
+  },
+  {
+    name: "Temples of Siem Reap",
+    description: "A photo series of the temples of Angkor.",
+    folder: "siemreap",
+    image: "travel/siemreap/main-horizontal.jpeg",
+  },
+  {
+    name: "Vietnam",
+    description: "A trip through the country of the ascending dragon.",
+    folder: "vietnam",
+    image: "travel/vietnam/main-horizontal.jpeg",
+  },
+  {
+    name: "Bangkok",
+    description: "A photo series of the capital of Thailand.",
+    folder: "bangkok",
+    image: "travel/bangkok/main-horizontal.jpeg",
+  },
 ];
 
 const imageToShowURL = ref<string[]>([]);

@@ -1,6 +1,6 @@
 <template>
-  <h1 class="title">Brutalism</h1>
-  <image-gallery folder-name="series/brutalism"></image-gallery>
+  <h1 class="title">Nador, Melilla & Oujda</h1>
+  <image-gallery folder-name="travel/nador"></image-gallery>
 </template>
 
 <script setup lang="ts">

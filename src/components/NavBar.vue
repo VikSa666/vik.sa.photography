@@ -3,29 +3,8 @@
     <ul class="navbar-menu">
       <li><router-link to="/home">Home</router-link></li>
       <li><router-link to="/about">About</router-link></li>
-      <li><router-link to="/series-index">Series Index</router-link></li>
-      <li class="dropdown">
-        <span>Series</span>
-        <ul class="dropdown-menu">
-          <li><router-link to="/series/moynaq">Aral Sea</router-link></li>
-          <li><router-link to="/series/melilla">The Fence</router-link></li>
-          <li><router-link to="/series/brutalism">Brutalism</router-link></li>
-        </ul>
-      </li>
-      <li class="dropdown">
-        <span>Location</span>
-        <ul class="dropdown-menu">
-          <li>
-            <router-link to="/location/location1">Location 1</router-link>
-          </li>
-          <li>
-            <router-link to="/location/location2">Location 2</router-link>
-          </li>
-          <li>
-            <router-link to="/location/location3">Location 3</router-link>
-          </li>
-        </ul>
-      </li>
+      <li><router-link to="/series-index">Series</router-link></li>
+      <li><router-link to="/travel-index">Travel</router-link></li>
     </ul>
   </nav>
 </template>
@@ -66,32 +45,6 @@
 
 .navbar-menu li a:hover {
   background-color: #575757;
-}
-
-.dropdown:hover .dropdown-menu {
-  display: block;
-}
-
-.dropdown-menu {
-  display: none;
-  position: absolute;
-  background-color: #333;
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-  top: 100%;
-  left: 0;
-}
-
-.dropdown-menu li {
-  margin: 0;
-}
-
-.dropdown-menu li a {
-  padding: 10px 20px;
-}
-
-.dropdown-menu li a:hover {
-  background-color: #575757;
+  cursor: pointer;
 }
 </style>
