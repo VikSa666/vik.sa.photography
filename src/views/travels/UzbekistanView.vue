@@ -1,6 +1,6 @@
 <template>
-  <h1 class="title">Brutalism</h1>
-  <image-gallery folder-name="brutalism"></image-gallery>
+  <h1 class="title">Uzbekistan</h1>
+  <image-gallery folder-name="travel/uzbekistan"></image-gallery>
 </template>
 
 <script setup lang="ts">

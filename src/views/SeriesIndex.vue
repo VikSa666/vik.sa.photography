@@ -37,19 +37,19 @@ const seriesList: SeriesDescription[] = [
     name: "The Aral Sea",
     description: "An expedition to the disappearing Aral Sea in Uzbekistan.",
     folder: "moynaq",
-    image: "moynaq/main-horizontal.jpeg",
+    image: "series/moynaq/main-horizontal.jpeg",
   },
   {
     name: "The Fence",
     description: "A photo series about the fence in Melilla, Spain.",
     folder: "melilla",
-    image: "melilla/main-horizontal.jpeg",
+    image: "series/melilla/main-horizontal.jpeg",
   },
   {
     name: "Brutalism Architecture",
     description: "A collection of brutalist architecture photos.",
     folder: "brutalism",
-    image: "brutalism/main-horizontal.jpeg",
+    image: "series/brutalism/main-horizontal.jpeg",
   },
   // Add more series here if needed
 ];

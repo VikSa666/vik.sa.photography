@@ -16,7 +16,7 @@
             <div class="text-container">
               <h2 class="series-title">{{ series.name }}</h2>
               <p class="series-description">{{ series.description }}</p>
-              <router-link class="see-more" :to="`series/${series.folder}`"
+              <router-link class="see-more" :to="`travels/${series.folder}`"
                 >See more →</router-link
               >
             </div>
@@ -37,56 +37,56 @@ const seriesList: SeriesDescription[] = [
     name: "Georgia",
     description: "My first travel with a camera.",
     folder: "georgia",
-    image: "georgia/main-horizontal.jpeg",
+    image: "travel/georgia/main-horizontal.jpeg",
   },
   {
     name: "Moldova and Transnistria",
     description: "A photo series of the least visited country in Europe.",
     folder: "moldavia",
-    image: "moldavia/main-horizontal.jpeg",
+    image: "travel/moldova/main-horizontal.jpeg",
   },
   {
     name: "New York City",
     description: "A collection of photos from the Big Apple.",
     folder: "ny",
-    image: "ny/main-horizontal.jpeg",
+    image: "travel/ny/main-horizontal.jpeg",
   },
   {
     name: "Nador, Melilla and Oujda",
     description: "Discover the unknown cities of Morocco.",
     folder: "nador",
-    image: "nador/main-horizontal.jpeg",
+    image: "travel/nador/main-horizontal.jpeg",
   },
   {
     name: "Uzbekistan",
     description: "Discover the remains of the Silk Road.",
     folder: "uzbekistan",
-    image: "uzbekistan/main-horizontal.jpeg",
+    image: "travel/uzbekistan/main-horizontal.jpeg",
   },
   {
     name: "Central Europe",
     description:
       "A journey through the cities of Berlin, Dresden, Prague, Krakow and Warsaw.",
     folder: "interrail",
-    image: "interrail/main-horizontal.jpeg",
+    image: "travel/interrail/main-horizontal.jpeg",
   },
   {
     name: "Temples of Siem Reap",
     description: "A photo series of the temples of Angkor.",
     folder: "siemreap",
-    image: "siemreap/main-horizontal.jpeg",
+    image: "travel/siemreap/main-horizontal.jpeg",
   },
   {
     name: "Vietnam",
     description: "A trip through the country of the ascending dragon.",
     folder: "vietnam",
-    image: "vietnam/main-horizontal.jpeg",
+    image: "travel/vietnam/main-horizontal.jpeg",
   },
   {
     name: "Bangkok",
     description: "A photo series of the capital of Thailand.",
     folder: "bangkok",
-    image: "bangkok/main-horizontal.jpeg",
+    image: "travel/bangkok/main-horizontal.jpeg",
   },
 ];
 

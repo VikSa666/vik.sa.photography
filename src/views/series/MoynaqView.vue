@@ -1,7 +1,7 @@
 <template>
   <div class="series">
     <h1>The Aral Sea</h1>
-    <image-gallery folder-name="moynaq"></image-gallery>
+    <image-gallery folder-name="series/moynaq"></image-gallery>
   </div>
 </template>
 
