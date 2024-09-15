@@ -8,6 +8,6 @@ import ImageGallery from "../components/ImageGallery.vue";
 
 const props = defineProps<{
   title: string;
-  folderName: String;
+  folderName: string;
 }>();
 </script>
