@@ -1,5 +1,5 @@
 <template>
-  <h1 class="title">Brutalism</h1>
+  <h1 class="title">Georgia</h1>
   <image-gallery folder-name="travel/georgia"></image-gallery>
 </template>
 
