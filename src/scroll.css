@@ -1,0 +1,15 @@
+/* CSS For the scroll appearing effect */
+
+/* To use this, use the class `scroll-effect importing this file */
+
+.scroll-effect {
+  width: 100%;
+  opacity: 0;
+  transform: translateY(100px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.scroll-effect.show {
+  opacity: 1;
+  transform: translateY(0);
+}
