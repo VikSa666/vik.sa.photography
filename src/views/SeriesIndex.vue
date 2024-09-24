@@ -24,5 +24,5 @@ const seriesList = [
 </script>
 
 <template>
-  <gallery-index :series-list="seriesList" />
+  <gallery-index category="series" :series-list="seriesList" />
 </template>

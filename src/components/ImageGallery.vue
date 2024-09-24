@@ -4,7 +4,8 @@ import { fetchImages } from "../fetchImages";
 import { useScrollAnimation } from "../composables/useScrollAnimation";
 
 const props = defineProps<{
-  folderName: string;
+  title: string;
+  folder: string;
 }>();
 
 // Variables
@@ -27,14 +28,15 @@ const { elementsRefs } = useScrollAnimation();
 
 // Fetch images on mount
 onMounted(() => {
-  fetchImages(props.folderName).then((data) => {
+  fetchImages(props.folder).then((data) => {
     if (data) images.value = data;
-    else console.log("No images found in the folder ", props.folderName);
+    else console.log("No images found in the folder ", props.folder);
   });
 });
 </script>
 
 <template>
+  <h1 class="title">{{ props.title }}</h1>
   <div class="loading-page" v-if="!loaded">
     <div class="spinner"></div>
     <div class="loading-percentage">{{ loadedPercentage }}%</div>
@@ -55,6 +57,14 @@ onMounted(() => {
 
 <style scoped>
 @import "../scroll.css"; /* Import the scroll effect CSS */
+
+.title {
+  margin-top: 6rem;
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--text-color);
+}
 
 .loading-page {
   position: fixed;

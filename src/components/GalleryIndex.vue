@@ -8,6 +8,7 @@ const { elementsRefs } = useScrollAnimation();
 
 const props = defineProps<{
   seriesList: SeriesDescription[];
+  category: string;
 }>();
 
 const imageToShowURL = ref<string[]>([]);
@@ -52,7 +53,9 @@ onMounted(() => {
             <div class="text-container">
               <h2 class="series-title">{{ series.name }}</h2>
               <p class="series-description">{{ series.description }}</p>
-              <router-link class="see-more" :to="`series/${series.folder}`"
+              <router-link
+                class="see-more"
+                :to="`${category}/${series.folder}/${series.name}`"
                 >See more →</router-link
               >
             </div>

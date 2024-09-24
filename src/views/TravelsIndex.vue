@@ -61,5 +61,5 @@ const seriesList = [
 </script>
 
 <template>
-  <gallery-index :series-list="seriesList" />
+  <gallery-index category="travels" :series-list="seriesList" />
 </template>
