@@ -1,13 +1,11 @@
 <script setup lang="ts">
 import { ref, onMounted } from "vue";
 import { fetchImages } from "../fetchImages";
+import { useScrollAnimation } from "../composables/useScrollAnimation";
 
 const props = defineProps<{
   folderName: string;
 }>();
-
-// Refs
-const imageRefs = ref<(HTMLImageElement | null)[]>([]);
 
 // Variables
 const images = ref<string[]>([]);
@@ -25,17 +23,7 @@ const onImageLoad = () => {
   }
 };
 
-// Detecting when the images enter the viewport
-const handleScroll = () => {
-  imageRefs.value.forEach((image) => {
-    if (image) {
-      const rect = image.getBoundingClientRect();
-      if (rect.top < window.innerHeight) {
-        image.classList.add("show");
-      }
-    }
-  });
-};
+const { elementsRefs } = useScrollAnimation();
 
 // Fetch images on mount
 onMounted(() => {
@@ -43,9 +31,6 @@ onMounted(() => {
     if (data) images.value = data;
     else console.log("No images found in the folder ", props.folderName);
   });
-
-  window.addEventListener("scroll", handleScroll);
-  handleScroll();
 });
 </script>
 
@@ -58,9 +43,9 @@ onMounted(() => {
   <div v-else class="gallery">
     <div class="gallery-item" v-for="(image, index) in images" :key="index">
       <img
-        class="scroll-image"
+        class="scroll-effect"
         :src="image"
-        :ref="(el) => (imageRefs[index] = el as HTMLImageElement)"
+        :ref="(el) => (elementsRefs[index] = el as HTMLImageElement)"
         alt="Image"
         @load="onImageLoad"
       />
@@ -69,6 +54,8 @@ onMounted(() => {
 </template>
 
 <style scoped>
+@import "../scroll.css"; /* Import the scroll effect CSS */
+
 .loading-page {
   position: fixed;
   top: 0;
@@ -119,18 +106,6 @@ onMounted(() => {
   width: 100%;
   display: block;
   margin-bottom: 16px;
-}
-
-.scroll-image {
-  width: 100%;
-  opacity: 0;
-  transform: translateY(100px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
-
-.scroll-image.show {
-  opacity: 1;
-  transform: translateY(0);
 }
 
 @media screen and (max-width: 700px) {
