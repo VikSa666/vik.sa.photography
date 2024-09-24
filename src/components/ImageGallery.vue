@@ -58,6 +58,7 @@ onMounted(() => {
   <div v-else class="gallery">
     <div class="gallery-item" v-for="(image, index) in images" :key="index">
       <img
+        class="scroll-image"
         :src="image"
         :ref="(el) => (imageRefs[index] = el as HTMLImageElement)"
         alt="Image"
@@ -118,6 +119,18 @@ onMounted(() => {
   width: 100%;
   display: block;
   margin-bottom: 16px;
+}
+
+.scroll-image {
+  width: 100%;
+  opacity: 0;
+  transform: translateY(100px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.scroll-image.show {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 @media screen and (max-width: 700px) {
