@@ -4,7 +4,7 @@ import ImageGallery from "../components/ImageGallery.vue";
 
 const route = useRoute();
 const folder = route.params.folder;
-const title = route.params.title;
+const title = route.params.title as string;
 </script>
 <template>
   <div>

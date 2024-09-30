@@ -1,6 +1,6 @@
 <template>
   <h1>{{ $props.title }}</h1>
-  <image-gallery :folder-name="props.folderName"></image-gallery>
+  <image-gallery :title="props.title" :folder="props.folderName"></image-gallery>
 </template>
 
 <script setup lang="ts">
