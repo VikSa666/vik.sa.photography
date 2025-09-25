@@ -8,12 +8,12 @@ import SeriesView from "../views/SeriesView.vue";
 import TravelsView from "../views/travelsView.vue";
 
 const routes = [
-  { path: "/", component: HomeView },
+  { path: "/home", component: HomeView },
   { path: "/about", component: AboutView },
   { path: "/series-index", component: SeriesIndex },
-  { path: "/series/:folder/:title", component: SeriesView },
-  { path: "/travel-index", component: TravelsIndex },
-  { path: "/travels/:folder/:title", component: TravelsView },
+  { path: "/series/:slug/", component: SeriesView },
+  // { path: "/travel-index", component: TravelsIndex },
+  // { path: "/travels/:slug/", component: TravelsView },
 ];
 
 const router = createRouter({

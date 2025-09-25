@@ -1,29 +1,20 @@
 <script setup lang="ts">
-import { supabase } from "../supabase/supabaseClient";
 import { onMounted, ref } from "vue";
-import { SeriesDescription } from "../types";
+import { Image, SeriesDescription } from "../types";
 import { useScrollAnimation } from "../composables/useScrollAnimation";
 
 const { elementsRefs } = useScrollAnimation();
 
 const props = defineProps<{
-  seriesList: SeriesDescription[];
+  seriesDescriptions: SeriesDescription[];
   category: string;
 }>();
 
-const imageToShowURL = ref<string[]>([]);
+const imageToShowURL = ref<(string | undefined)[]>([]);
 
-const fetchSeriesImages = async () => {
-  props.seriesList.forEach(async (series) => {
-    const data = await supabase.storage
-      .from("photography")
-      .getPublicUrl(series.image);
-
-    if (data) {
-      imageToShowURL.value.push(data.data.publicUrl);
-    } else {
-      console.log("No files found in the folder.");
-    }
+const fetchSeriesImages = () => {
+  props.seriesDescriptions.forEach((series) => {
+    imageToShowURL.value.push(series.coverImage.publicUrl);
   });
 };
 
@@ -36,8 +27,8 @@ onMounted(() => {
   <div class="series-page">
     <div class="series-container">
       <div
-        v-for="(series, index) in seriesList"
-        :key="series.name"
+        v-for="(series, index) in props.seriesDescriptions"
+        :key="series.title"
         class="series-item"
       >
         <div
@@ -51,11 +42,9 @@ onMounted(() => {
           />
           <div class="overlay">
             <div class="text-container">
-              <h2 class="series-title">{{ series.name }}</h2>
+              <h2 class="series-title">{{ series.title }}</h2>
               <p class="series-description">{{ series.description }}</p>
-              <router-link
-                class="see-more"
-                :to="`${category}/${series.folder}/${series.name}`"
+              <router-link class="see-more" :to="`${category}/${series.slug}`"
                 >See more →</router-link
               >
             </div>

@@ -1,14 +1,17 @@
 <script setup lang="ts">
 import { useRoute } from "vue-router";
 import ImageGallery from "../components/ImageGallery.vue";
+import { computed } from "vue";
+import { SERIES_DATA } from "../assets/data";
 
 const route = useRoute();
-const folder = route.params.folder;
-console.log(folder);
-const title = route.params.title;
+const slug = route.params.slug;
+const series = computed(() =>
+  SERIES_DATA.find((series) => series.slug == slug)
+);
 </script>
 <template>
   <div>
-    <image-gallery :folder="`series/${folder}`" :title="title"></image-gallery>
+    <image-gallery :series="series"></image-gallery>
   </div>
 </template>

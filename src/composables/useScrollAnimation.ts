@@ -5,7 +5,9 @@ export function useScrollAnimation() {
 
   // Scroll handler to add the 'show' class when an image comes into view
   const handleScroll = () => {
-    elementsRefs.value.forEach((element) => {
+    console.log("handle scroll");
+    console.log(elementsRefs);
+    elementsRefs.value.forEach((element: HTMLElement) => {
       if (element) {
         const rect = element.getBoundingClientRect();
         if (rect.top < window.innerHeight) {
@@ -18,7 +20,8 @@ export function useScrollAnimation() {
   onMounted(() => {
     // Setup event listener
     window.addEventListener("scroll", handleScroll);
-    handleScroll(); // Trigger on initial load
+    // Trigger on initial load
+    handleScroll();
   });
 
   // Clean up the event listener

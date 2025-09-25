@@ -4,7 +4,7 @@
       <li><router-link to="/home">Home</router-link></li>
       <li><router-link to="/about">About</router-link></li>
       <li><router-link to="/series-index">Series</router-link></li>
-      <li><router-link to="/travel-index">Travel</router-link></li>
+      <!-- <li><router-link to="/travel-index">Travel</router-link></li> -->
     </ul>
   </nav>
 </template>

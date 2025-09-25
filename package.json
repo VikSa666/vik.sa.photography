@@ -10,6 +10,8 @@
     "deploy": "vite build && git add dist && git commit -m 'Deploy' && git subtree push --prefix dist origin gh-pages"
   },
   "dependencies": {
+    "@cloudinary/url-gen": "^1.21.0",
+    "@cloudinary/vue": "^1.12.1",
     "@supabase/supabase-js": "^2.45.3",
     "vue": "^3.4.37",
     "vue-router": "^4.4.3"
