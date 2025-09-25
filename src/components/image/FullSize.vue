@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 interface Props {
-  imageUrl: string;
+  imageUrl?: string;
 }
 
 const props = defineProps<Props>();
@@ -9,7 +9,10 @@ const props = defineProps<Props>();
 <template>
   <div class="lightbox" @click.self="$emit('close')">
     <img
-      :src="props.imageUrl"
+      :src="
+        props.imageUrl ??
+        '../../assets/illustration-gallery-icon_53876-27002.jpg'
+      "
       alt="Full size foto"
       @click.self="$emit('close')"
     />

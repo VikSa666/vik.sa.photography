@@ -12,6 +12,6 @@ const series = computed(() =>
 </script>
 <template>
   <div>
-    <image-gallery :series="series"></image-gallery>
+    <image-gallery v-if="series" :series="series"></image-gallery>
   </div>
 </template>

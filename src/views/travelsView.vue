@@ -8,6 +8,6 @@ const title = route.params.title as string;
 </script>
 <template>
   <div>
-    <image-gallery :folder="`travel/${folder}`" :title="title"></image-gallery>
+    <!-- <image-gallery :folder="`travel/${folder}`" :title="title"></image-gallery> -->
   </div>
 </template>
