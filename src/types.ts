@@ -2,7 +2,7 @@ export const FALLBACK_IMAGE_URL: string = "assets/1.jpg";
 
 export interface ImageInfo {
   title: string;
-  description: string;
+  description?: string;
   location: string;
   camera: string; // TODO: define enum with cameras
   filmRoll: string; // TODO: define enum with filmroll
@@ -22,6 +22,7 @@ export interface ImageSeries {
   slug: Series;
   images: Image[];
   coverImageIndex?: number;
+  randomize: boolean;
 }
 
 export interface SeriesDescription {
@@ -31,4 +32,4 @@ export interface SeriesDescription {
   coverImage: Image;
 }
 
-export type Series = "moynaq" | "melilla" | "brutalism" | "none";
+export type Series = "moynaq" | "melilla" | "post-urss" | "none";

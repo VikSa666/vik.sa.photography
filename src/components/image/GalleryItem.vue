@@ -29,7 +29,11 @@ function openFullSize() {
         </button>
       </div>
       <div v-if="props.imageData.info" class="image-info">
-        <info-item :content="props.imageData.info.description" />
+        <h3>{{ props.imageData.info.title }}</h3>
+        <info-item
+          v-if="props.imageData.info.description"
+          :content="props.imageData.info.description"
+        />
         <info-item label="Camera" :content="props.imageData.info.camera" />
         <info-item label="Roll" :content="props.imageData.info.filmRoll" />
         <info-item
@@ -91,6 +95,7 @@ function openFullSize() {
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-end;
+    text-align: left;
     height: 50%;
     padding-left: 5%;
     padding-bottom: 5%;
@@ -99,6 +104,10 @@ function openFullSize() {
       rgba(0, 0, 0, 0),
       rgba(0, 0, 0, 0.8)
     );
+  }
+
+  .image-info h3 {
+    font-family: "Roboto Mono", monospace;
   }
 }
 
@@ -110,12 +119,15 @@ function openFullSize() {
   background-color: transparent;
   border: none;
   cursor: pointer;
-  width: 30px;
-  height: 30px;
+  width: 5%;
+  min-width: 24px;
+  min-height: 24px;
+  aspect-ratio: 1/1;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 16px;
+  margin: 5%;
+  padding: 1%;
   transition: background-color 0.3s ease;
 }
 

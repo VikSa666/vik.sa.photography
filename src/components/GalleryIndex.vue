@@ -42,7 +42,7 @@ onMounted(() => {
           />
           <div class="overlay">
             <div class="text-container">
-              <h2 class="series-title">{{ series.title }}</h2>
+              <h2>{{ series.title }}</h2>
               <p class="series-description">{{ series.description }}</p>
               <router-link class="see-more" :to="`${category}/${series.slug}`"
                 >See more →</router-link
@@ -95,9 +95,9 @@ onMounted(() => {
   position: absolute;
   top: 0;
   right: 0;
-  width: 50%; /* Takes up the right half of the image */
+  width: 100%;
   height: 100%;
-  background: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8));
+  background: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -110,22 +110,29 @@ onMounted(() => {
 .text-container {
   text-align: right;
   color: white;
-}
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
 
-.series-title {
-  font-size: 2.5rem;
-  font-weight: bold;
-  margin: 0;
+  h2 {
+    font-family: "Lexend Peta", sans-serif;
+    font-weight: 400;
+    font-size: 3.5rem;
+    /* font-weight: bold; */
+    margin: 0;
+  }
 }
 
 .series-description {
-  font-size: 1.2rem;
+  font-size: 1rem;
   margin-top: 10px;
+  max-width: 45%;
 }
 
 .see-more {
   color: white;
   font-size: 1.2rem;
+  font-family: "Roboto Mono", monospace;
 }
 
 .see-more:hover {

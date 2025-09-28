@@ -1,0 +1,62 @@
+[
+  {
+    "publicUrl": "https://res.cloudinary.com/dyyvaakw8/image/upload/v1758887550/0DB7D13C-B8EC-456F-AF6F-9D6613E5F43D_1_105_c_p739ng.jpg",
+    "info": {
+      "title": "Selfi at a bar",
+      "location": "Brest, Belarus",
+      "camera": "Minolta XG1",
+      "filmRoll": "Ilford HP5+",
+      "developer": "Self developed",
+      "scanner": "Revelab Studio",
+      "date": "December 2024"
+    }
+  },
+  {
+    "publicUrl": "https://res.cloudinary.com/dyyvaakw8/image/upload/v1758887559/4CC421F2-0A9E-48BE-B789-5E02EBEDEEFF_v2haog.jpg",
+    "info": {
+      "title": "Selfie at a bar",
+      "location": "Yerevan, Armenia",
+      "camera": "Nikon F70",
+      "filmRoll": "Ilford HP5+",
+      "developer": "Revelab Studio",
+      "scanner": "Revelab Studio",
+      "date": "March 2025"
+    }
+  },
+  {
+    "publicUrl": "https://res.cloudinary.com/dyyvaakw8/image/upload/v1758887554/5B9512E0-7F7A-40E4-AB7A-B466EC6C731C_opoj0a.jpg",
+    "info": {
+      "title": "Selfie in a window",
+      "location": "Skopje, North Macedonia",
+      "camera": "Nikon F70",
+      "filmRoll": "Ilford HP5+",
+      "developer": "Revelab Studio",
+      "scanner": "Revelab Studio",
+      "date": "March 2025"
+    }
+  },
+  {
+    "publicUrl": "https://res.cloudinary.com/dyyvaakw8/image/upload/v1758887539/27D191CE-0142-4BDE-A5EE-187AEA3F602C_qxugpa.jpg",
+    "info": {
+      "title": "Selfie in an appartment",
+      "location": "Barcelona, Spain",
+      "camera": "Minolta XG1",
+      "filmRoll": "Ilford HP5+",
+      "developer": "Revelab Studio",
+      "scanner": "Revelab Studio",
+      "date": "February 2025"
+    }
+  },
+  {
+    "publicUrl": "https://res.cloudinary.com/dyyvaakw8/image/upload/v1758887535/1E71E163-E477-4CAE-BDAC-814C86F92631_qdazms.jpg",
+    "info": {
+      "title": "Selfie in an abbandoned mirror",
+      "location": "Radio Optical Observatory ROT-54, Armenia",
+      "camera": "Minolta XG1",
+      "filmRoll": "Ilford HP5+",
+      "developer": "Revelab Studio",
+      "scanner": "Revelab Studio",
+      "date": "March 2025"
+    }
+  }
+]

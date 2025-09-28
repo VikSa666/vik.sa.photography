@@ -1,27 +1,56 @@
 <script setup lang="ts">
-import { useScrollAnimation } from "../composables/useScrollAnimation";
-import { ImageSeries } from "@/types";
+import { ImageSeries, Image } from "@/types";
 import GalleryItem from "./image/GalleryItem.vue";
 import FullSize from "./image/FullSize.vue";
 import { ref } from "vue";
 import { Ref } from "vue";
+import { onMounted } from "vue";
 
 const props = defineProps<{
   series: ImageSeries;
 }>();
 
 const lightboxVisible = ref(false);
-const selectedImageUrl: Ref<string | undefined> = ref(undefined);
+const selectedImageIndex: Ref<number | undefined> = ref(undefined);
 
-function openLightbox(imageUrl: string) {
-  selectedImageUrl.value = imageUrl;
+function openLightbox(imageIndex: number) {
+  selectedImageIndex.value = imageIndex;
   lightboxVisible.value = true;
+  document.body.classList.add("no-scroll");
 }
 
 function closeLightbox() {
-  selectedImageUrl.value = undefined;
+  selectedImageIndex.value = undefined;
   lightboxVisible.value = false;
+  document.body.classList.remove("no-scroll");
 }
+
+/**
+ * Shuffle algorithm taken from <https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array>
+ * @param imageArray Array to be shuffle
+ */
+function shuffle(imageArray: Image[]) {
+  let currentIndex = imageArray.length;
+
+  // While there remain elements to shuffle...
+  while (currentIndex != 0) {
+    // Pick a remaining element...
+    let randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex--;
+
+    // And swap it with the current element.
+    [imageArray[currentIndex], imageArray[randomIndex]] = [
+      imageArray[randomIndex],
+      imageArray[currentIndex],
+    ];
+  }
+}
+
+onMounted(() => {
+  if (props.series.randomize) {
+    shuffle(props.series.images);
+  }
+});
 </script>
 
 <template>
@@ -37,12 +66,13 @@ function closeLightbox() {
       <gallery-item
         v-for="(image, index) in props.series.images"
         :image-data="image"
-        @open-lightbox="openLightbox(image.publicUrl)"
+        @open-lightbox="openLightbox(index)"
       />
     </div>
     <full-size
       v-if="lightboxVisible"
-      :image-url="selectedImageUrl"
+      :image-to-start-index="selectedImageIndex"
+      :images="props.series.images"
       @close="closeLightbox"
     />
   </div>
