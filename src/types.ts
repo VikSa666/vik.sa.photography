@@ -23,6 +23,7 @@ export interface ImageSeries {
   images: Image[];
   coverImageIndex?: number;
   randomize: boolean;
+  columns?: number;
 }
 
 export interface SeriesDescription {
@@ -32,4 +33,4 @@ export interface SeriesDescription {
   coverImage: Image;
 }
 
-export type Series = "moynaq" | "melilla" | "post-urss" | "none";
+export type Series = "moynaq" | "melilla" | "post-urss" | "portraits" | "none";

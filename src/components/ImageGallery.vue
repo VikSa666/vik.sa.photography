@@ -8,6 +8,7 @@ import { onMounted } from "vue";
 
 const props = defineProps<{
   series: ImageSeries;
+  columns: number;
 }>();
 
 const lightboxVisible = ref(false);
@@ -62,7 +63,7 @@ onMounted(() => {
     <div v-if="props.series.images.length === 0">
       No images found in the folder.
     </div>
-    <div v-else class="gallery">
+    <div v-else class="gallery" :style="{ '--columns': props.columns }">
       <gallery-item
         v-for="(image, index) in props.series.images"
         :image-data="image"
@@ -103,7 +104,7 @@ onMounted(() => {
 }
 
 .gallery {
-  column-count: 2; /* Two columns */
+  column-count: var(--columns); /* Two columns */
   column-gap: 16px; /* Space between the columns */
 }
 

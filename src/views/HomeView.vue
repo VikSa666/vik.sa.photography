@@ -14,16 +14,18 @@ const firstImage =
 
 <style scoped>
 .home-page {
-  margin-top: 25%;
   max-width: 75vw;
   img {
     width: 50%;
   }
   h1 {
-    color: black;
+    color: inherit;
     font-family: "Lexend Peta", sans-serif;
     font-weight: 200;
     font-size: 3.5rem;
+    a {
+      color: inherit;
+    }
   }
 }
 </style>

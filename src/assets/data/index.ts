@@ -2,6 +2,7 @@ import { SeriesDescription, type ImageSeries } from "../../types";
 import { MOYNAQ_SERIES } from "./series/moynaq";
 import { MELILLA_SERIES } from "./series/melilla";
 import { POST_URSS_SERIES } from "./series/post-urss";
+// import { PORTRAITS_SERIES } from "./series/portraits";
 
 export const SERIES_DATA: ImageSeries[] = [
   MOYNAQ_SERIES,

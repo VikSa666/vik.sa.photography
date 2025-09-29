@@ -1,6 +1,6 @@
 <template>
   <h1>{{ $props.title }}</h1>
-  <image-gallery :series="props.series"></image-gallery>
+  <image-gallery :series="props.series" :columns="3"></image-gallery>
 </template>
 
 <script setup lang="ts">
